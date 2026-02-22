@@ -1,0 +1,218 @@
+:root {
+  --primary: #2563eb;
+  --primary-light: #dbeafe;
+  --success: #059669;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --bg-body: #f8fafc;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTENEDOR PRINCIPAL: Ahora mucho más ancho */
+.course-detail {
+  max-width: 1400px; 
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-body);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.course-detail h1 {
+  font-size: 3.5rem; /* Título mucho más grande */
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+}
+
+.course-desc {
+  font-size: 1.3rem; /* Texto más grande */
+  color: var(--text-muted);
+  max-width: 900px;
+  line-height: 1.6;
+  margin-bottom: 4rem;
+}
+
+/* LISTA DE LECCIONES: Más separación entre cards */
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Espacio generoso entre lecciones */
+}
+
+/* CARD DE LECCIÓN: Más alta y espaciosa */
+.lesson-item {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.lesson-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.lesson-item.active {
+  border: 2px solid var(--primary);
+  box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.15);
+}
+
+/* CABECERA INTERNA: Padding vertical aumentado */
+.lesson-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 3rem; /* Mucho más espacio interno */
+}
+
+.lesson-meta h3 {
+  font-size: 1.8rem; /* Título de lección más grande */
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+  flex: 1;
+}
+
+/* ACCIONES / BOTONES */
+.lesson-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.btn-small {
+  padding: 1rem 2rem; /* Botones más grandes */
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8 !important;
+  transform: scale(1.05);
+}
+
+.btn-small:disabled {
+  background: #ecfdf5 !important;
+  color: var(--success) !important;
+  border-color: #a7f3d0 !important;
+  cursor: default;
+}
+
+/* CONTENIDO DE LA LECCIÓN: Abierto y espacioso */
+.lesson-content {
+  padding: 3rem; /* Espacio gigante para el contenido */
+  background-color: #fafbfc;
+  border-top: 1px solid var(--border-color);
+  animation: slideIn 0.5s ease-out;
+}
+
+.lesson-content p {
+  font-size: 1.25rem; /* Texto de lectura más grande */
+  line-height: 1.8;
+  color: #334155;
+}
+
+/* VIDEO */
+.lesson-video {
+  margin: 2.5rem 0;
+}
+
+.lesson-video a {
+  display: inline-flex;
+  padding: 1.2rem 2.5rem;
+  background: #0f172a;
+  color: white;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.lesson-video a:hover {
+  background: var(--primary);
+}
+
+/* EXAMEN: Sección destacada */
+.lesson-exams {
+  margin-top: 4rem;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid var(--primary-light);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.lesson-exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--bg-body);
+  padding-bottom: 1.5rem;
+}
+
+.lesson-exam-header h4 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--primary);
+}
+
+.exam-count {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+}
+
+/* LOADING */
+.loading {
+  display: flex;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+/* ANIMACIÓN */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* AJUSTE PARA MÓVILES */
+@media (max-width: 768px) {
+  .lesson-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .course-detail h1 {
+    font-size: 2.5rem;
+  }
+}
