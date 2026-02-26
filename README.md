@@ -174,10 +174,6 @@ OPENAI_API_KEY=prod-openai-key
 ML_SERVICE_URL=https://ml-service-production.onrender.com
 ```
 
-## 🔟 Enlace al video explicativo
-
-
-
-## 🎥 Video explicativo (máx. 5 minutos)
+## 🎥 Video explicativo
 
 [https://drive.google.com/file/d/1bRjijLlN6vBct1_iwi3C5BjFB9DuI0I6/view?usp=sharing](https://drive.google.com/file/d/1bRjijLlN6vBct1_iwi3C5BjFB9DuI0I6/view?usp=sharing)
